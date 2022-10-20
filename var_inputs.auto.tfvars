@@ -22,7 +22,7 @@ pod_subnet2_name = "anthos-proj-pod-subnet2-test1"
 pod_svc_subnet1_name = "anthos-proj-pod-svc-subnet1-test1"
 pod_svc_subnet2_name = "anthos-proj-pod-svc-subnet2-test1"
 
-firewall_name = "allow-all-intra"
+firewall_name = "allow-all-intra-connection-test1"
 
 
 #ASM
