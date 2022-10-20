@@ -13,7 +13,7 @@ module "network" {
     {
       subnet_name           = "${var.subnet2_name}"
       subnet_ip             = "10.40.32.0/21" # 2046 usable ips for nodes
-      subnet_region         = var.region1_name
+      subnet_region         = var.region2_name
       subnet_private_access = "true"
     },
   ]
