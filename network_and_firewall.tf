@@ -18,6 +18,8 @@ module "network" {
     },
   ]
 
+  secondary_ranges = {}
+  
   firewall_rules = [{
     name        = var.firewall_name
     description = "Allow Pod to Pod connectivity"
