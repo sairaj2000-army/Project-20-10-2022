@@ -5,7 +5,7 @@ module "gke" {
   project_id = var.project_id
   name       = var.cluster_name
   regional   = false
-  region     = var.region
+  #region     = var.region
   zones      = ["us-central1-c"]
   
   #network    = var.network_name
