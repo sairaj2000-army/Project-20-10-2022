@@ -14,7 +14,7 @@ network_name = "anthos_proj_network_test5"
 
 subnet_name = "anthos_proj_subnet_test5"
 
-#firewall_name = "allow-all-intra-test5"
+firewall_name = "allow-all-intra-test5"
 
 pod_subnet_name = "anthos-proj-pod-subnet-test5"
 
