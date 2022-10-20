@@ -1,7 +1,7 @@
 project_id = "us-gcp-ame-its-23a8a-sbx-1"
 
 
-cluster_name = "anthos-Proj-cluster1-test5"
+cluster_name = "anthos-proj-cluster1-test5"
 
 
 region_name = "us-central1"
