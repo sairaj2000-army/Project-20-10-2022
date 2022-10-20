@@ -1,0 +1,79 @@
+********** GKE CLUSTER ********************************
+1. https://blog.knoldus.com/how-to-create-gke-on-gcp-using-terraform/#terraform-scripts
+
+********** GKE CLUSTER NODE POOL ***********************
+2. https://registry.terraform.io/modules/terraform-google-modules/kubernetes-engine/google/latest/examples/node_pool
+
+https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools
+
+
+*********** IMPORTANT REFERENCE FOR OUR PROBLEM STATEMENT ****************
+
+https://stackoverflow.com/questions/69393640/terraform-code-to-create-anthos-in-google-cloud
+
+************ ACM (Config Sync & Policy Controller) ***********************
+
+https://cloud.google.com/blog/topics/anthos/using-terraform-to-enable-config-sync-on-a-gke-cluster
+
+************************ GKE HUB *****************************************
+
+https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/gke_hub_membership
+
+
+*********** Policy Controller ******************************* OPA *********************
+https://www.openpolicyagent.org/docs/latest/kubernetes-primer/
+
+
+************** Policy for Policy controller ************************
+
+https://cloud.google.com/anthos-config-management/docs/latest/reference/constraint-template-library
+
+****************** Define policy (yaml file) in terraform script ************************
+
+https://registry.terraform.io/modules/cloudposse/config/yaml/latest
+
+*********************** Policy for creation IMPORTANT ********************************
+
+https://docs.bitnami.com/tutorials/secure-kubernetes-cluster-psp/
+
+
+*********************** ASM ****************************************
+
+https://github.com/terraform-google-modules/terraform-google-kubernetes-engine/tree/v23.2.0/modules/asm
+
+********************* FULL PROJECT ANTHOS *******************************
+
+https://github.com/caddac/anthos-examples/blob/main/asm/infra/infra.tf
+https://www.doit.com/set-up-multi-cluster-anthos-service-mesh-using-managed-control-plane/
+
+*********************** Auto trigger *****************************
+https://www.edureka.co/community/8876/how-to-trigger-jenkins-pipeline-in-another-jenkins-pipeline
+
+
+****************** glenn script for asm ************************
+https://faun.pub/setting-up-anthos-in-gke-for-demo-using-terraform-210ec227819a
+
+
+
+
+********************** Project repo from alex for new approach *************************
+https://github.com/alevz257/terraform-asm
+
+
+https://faun.pub/setting-up-anthos-in-gke-for-demo-using-terraform-210ec227819a
+
+
+https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/monitoring_istio_canonical_service
+Terraform Registry
+
+**************************** Johannes Glenn IMP ********************************************
+https://github.com/alevz257/terraform-asm
+
+****************************** Repo Sync and Config Sync ****************************** Module of config sync and policy controller 
+https://cloud.google.com/anthos-config-management/docs/reference/rootsync-reposync-fields
+
+
+
+
+
+
