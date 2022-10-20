@@ -4,7 +4,7 @@ module "network" {
   
   network_name = var.network_name
   project_id   = var.project_id #module.project.project_id
-  routing_mode = "GLOBAL"
+  #routing_mode = "GLOBAL"
   
   subnets = [
     {
@@ -36,7 +36,7 @@ module "network" {
     name        = var.firewall_name
     description = "Allow Pod to Pod connectivity"
     direction   = "INGRESS"
-    ranges      = ["10.40.0.0/18"]
+    ranges      = ["10.10.0.0/18"]
     allow = [{
       protocol = "tcp"
       ports    = ["0-65535"]
