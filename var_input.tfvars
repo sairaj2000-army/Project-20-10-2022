@@ -15,7 +15,7 @@ network_name = "anthos_proj_network_test1"
 subnet1_name = "anthos_proj_subnet1_test1"
 subnet2_name = "anthos_proj_subnet2_test1"
 
-Firewall_name = "allow-all-intra"
+firewall_name = "allow-all-intra-test1"
 
 
 #ASM
