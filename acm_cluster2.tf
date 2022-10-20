@@ -1,7 +1,7 @@
 
 #register this cluster as a member of the fleet
 resource "google_gke_hub_membership" "cluster2_membership" {
-  membership_id = "${var.gcp_project_id}-cluster2"
+  membership_id = "${var.project_id}-cluster2"
   endpoint {
     gke_cluster {
       resource_link = "//container.googleapis.com/${module.cluster2.cluster_id}"
