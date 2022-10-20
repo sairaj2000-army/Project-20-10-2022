@@ -19,12 +19,12 @@ module "network" {
   ]
   secondary_ranges = {
     "${var.subnet1_name}" : [
-      { range_name = "${pod_subnet1_name}", ip_cidr_range = "10.10.16.0/20" }, # 4094 usable ips for pods
-      { range_name = "${pod_svc_subnet1_name}", ip_cidr_range = "10.10.8.0/21" }    # 2046 usable ips for services
+      { range_name = "${var.pod_subnet1_name}", ip_cidr_range = "10.10.16.0/20" }, # 4094 usable ips for pods
+      { range_name = "${var.pod_svc_subnet1_name}", ip_cidr_range = "10.10.8.0/21" }    # 2046 usable ips for services
     ],
     "${var.subnet1_name}" : [
-      { range_name = "${pod_subnet2_name}", ip_cidr_range = "10.10.48.0/20" }, # 4094 usable ips for pods
-      { range_name = "${pod_svc_subnet2_name}", ip_cidr_range = "10.10.40.0/21" }   # 2046 usable ips for services
+      { range_name = "${var.pod_subnet2_name}", ip_cidr_range = "10.10.48.0/20" }, # 4094 usable ips for pods
+      { range_name = "${var.pod_svc_subnet2_name}", ip_cidr_range = "10.10.40.0/21" }   # 2046 usable ips for services
     ]
   }
 
