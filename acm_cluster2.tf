@@ -1,4 +1,4 @@
-module "acm" {
+module "acm_cluster2" {
   source           = "terraform-google-modules/kubernetes-engine/google//modules/acm"
   version          = "18.0"
   project_id       = var.project_id
