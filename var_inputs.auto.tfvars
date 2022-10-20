@@ -1,7 +1,7 @@
 
 project_id = "us-gcp-ame-its-23a8a-sbx-1"
 
-common_name_for_hash = "anthos_test1"
+common_name_for_hash = "anthos-test1"
 
 cluster1_name = "anthos-Proj-cluster1-test1"
 cluster2_name = "anthos-Proj-cluster1-test1"
