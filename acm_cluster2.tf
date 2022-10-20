@@ -8,7 +8,7 @@ resource "google_gke_hub_membership" "cluster2_membership" {
     }
   }
   authority {
-    issuer = "https://container.googleapis.com/v1/${module.cluster1.cluster_id}"
+    issuer = "https://container.googleapis.com/v1/${module.cluster2.cluster_id}"
   }
 
   provider   = google-beta
