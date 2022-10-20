@@ -1,8 +1,11 @@
 module "network" {
   source       = "terraform-google-modules/network/google"
-  version      = "5.0.0"
+  version      = "~> 4.0"
+  
   network_name = var.network_name
   project_id   = var.project_id #module.project.project_id
+  routing_mode = "GLOBAL"
+  
   subnets = [
     {
       subnet_name           = "${var.subnet1_name}"
