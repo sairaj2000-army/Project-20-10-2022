@@ -5,16 +5,16 @@ module "network" {
   project_id   = var.project_id #module.project.project_id
   subnets = [
     {
-      subnet_name           = var.subnet_name
+      subnet_name           = "${var.subnet_name}"
       subnet_ip             = "10.10.0.0/21" # 2046 usable ips for nodes
       subnet_region         = var.region_name
       subnet_private_access = "true"
     },
   ]
   secondary_ranges = {
-    var.subnet_name : [
-      { range_name = "c1-pods-range", ip_cidr_range = "10.10.16.0/20" }, # 4094 usable ips for pods
-      { range_name = "c1-svc-range", ip_cidr_range = "10.10.8.0/21" }    # 2046 usable ips for services
+    "${var.subnet_name}" : [
+      { range_name = "${pod_subnet_name}", ip_cidr_range = "10.10.16.0/20" }, # 4094 usable ips for pods
+      { range_name = "${pod_svc_subnet_name}", ip_cidr_range = "10.10.8.0/21" }    # 2046 usable ips for services
     ],
   }
 
