@@ -6,8 +6,8 @@ common_name_for_hash = "anthos-test1"
 cluster1_name = "anthos-proj-cluster1-test1"
 cluster2_name = "anthos-proj-cluster1-test1"
 
-region1_name = "us-east1"
-region2_name = "us-west1"
+region1_name = "us-west1"
+region2_name = "us-east1"
 
 
 #network and Firewall
