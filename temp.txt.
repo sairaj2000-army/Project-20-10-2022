@@ -1,0 +1,10 @@
+  firewall_rules = [{
+    name        = var.firewall_name
+    description = "Allow Pod to Pod connectivity"
+    direction   = "INGRESS"
+    ranges      = ["10.10.0.0/18"]
+    allow = [{
+      protocol = "tcp"
+      ports    = ["0-65535"]
+    }]
+  }]
