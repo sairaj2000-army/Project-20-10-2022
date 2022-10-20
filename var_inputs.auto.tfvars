@@ -11,7 +11,7 @@ region2_name = "us-west1"
 
 
 #network and Firewall
-network_name = "anthos_proj_network_test1"
+network_name = "anthosprojnetworktest1"
 
 subnet1_name = "anthos_proj_subnet1_test1"
 subnet2_name = "anthos_proj_subnet2_test1"
