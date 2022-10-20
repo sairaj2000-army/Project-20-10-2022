@@ -28,6 +28,8 @@ variable "minnode" {}
 variable "maxnode" {}
 variable "disksize" {}
 
+variable "common_name_for_hash" {}
+
 #variable "policy_dir" {}
 
 variable "folder_id" {
