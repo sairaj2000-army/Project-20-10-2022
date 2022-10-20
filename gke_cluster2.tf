@@ -1,4 +1,4 @@
-module "cluster1" {
+module "cluster2" {
   source  = "terraform-google-modules/kubernetes-engine/google"
   version = "19.0.0"
 
