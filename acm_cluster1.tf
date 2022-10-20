@@ -1,6 +1,6 @@
 
 resource "google_gke_hub_membership" "cluster1_membership" {
-  membership_id = "${var.gcp_project_id}-cluster1"
+  membership_id = "${var.project_id}-cluster1"
   endpoint {
     gke_cluster {
       resource_link = "//container.googleapis.com/${module.cluster1.cluster_id}"
