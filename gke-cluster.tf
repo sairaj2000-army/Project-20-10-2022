@@ -7,8 +7,15 @@ module "gke" {
   regional   = false
   region     = var.region
   zones      = ["us-central1-c"]
-  network    = var.network_name
-  subnetwork = module.network.subnets_names[0]
+  
+  #network    = var.network_name
+  #subnetwork = module.network.subnets_names[0]
+  
+  network           = module.network.network_name
+  subnetwork        = var.subnet_name
+  ip_range_pods     = var.pod_subnet_name
+  ip_range_services = var.pod_svc_subnet_name
+  
 
   identity_namespace = "enabled"
 
