@@ -1,7 +1,7 @@
 project_id = "us-gcp-ame-its-23a8a-sbx-1"
 
 
-cluster_name = "anthos_Proj_cluster1_test5"
+cluster_name = "anthos-Proj-cluster1-test5"
 
 
 region_name = "us-central1"
@@ -10,9 +10,9 @@ zone_name = "us-central1-c"
 
 
 #network and Firewall
-network_name = "anthos_proj_network_test5"
+network_name = "anthos-proj-network-test5"
 
-subnet_name = "anthos_proj_subnet_test5"
+subnet_name = "anthos-proj-subnet-test5"
 
 firewall_name = "allow-all-intra-test5"
 
