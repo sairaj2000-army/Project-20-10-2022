@@ -28,6 +28,7 @@ variable "minnode" {}
 variable "maxnode" {}
 variable "disksize" {}
 
+variable "policy_dir" {}
 
 variable "folder_id" {
   default     = ""
