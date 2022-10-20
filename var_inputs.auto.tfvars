@@ -1,10 +1,10 @@
 
 project_id = "us-gcp-ame-its-23a8a-sbx-1"
 
-common_name_for_hash = "anthos-test4"
+common_name_for_hash = "anthos-testing1"
 
-cluster1_name = "anthos-proj-cluster1-test4"
-cluster2_name = "anthos-proj-cluster2-test4"
+cluster1_name = "anthos-proj-cluster1-testing1"
+cluster2_name = "anthos-proj-cluster2-testing1"
 
 region1_name = "us-west1"
 region2_name = "us-east1"
@@ -12,16 +12,16 @@ region2_name = "us-east1"
 
 #network and Firewall
 
-network_name = "anthos-proj-network-test4"
+network_name = "anthos-proj-network-testing1"
 
-subnet1_name = "anthos-proj-subnet1-test4"
-subnet2_name = "anthos-proj-subnet2-test4"
+subnet1_name = "anthos-proj-subnet1-testing1"
+subnet2_name = "anthos-proj-subnet2-testing1"
 
-pod_subnet1_name = "anthos-proj-pod-subnet1-test4"
-pod_subnet2_name = "anthos-proj-pod-subnet2-test4"
+pod_subnet1_name = "anthos-proj-pod-subnet1-testing1"
+pod_subnet2_name = "anthos-proj-pod-subnet2-testing1"
 
-pod_svc_subnet1_name = "anthos-proj-pod-svc-subnet1-test4"
-pod_svc_subnet2_name = "anthos-proj-pod-svc-subnet2-test4"
+pod_svc_subnet1_name = "anthos-proj-pod-svc-subnet1-testing1"
+pod_svc_subnet2_name = "anthos-proj-pod-svc-subnet2-testing1"
 
 #network_name = "anthosprojnetworktest1"
 
@@ -34,7 +34,7 @@ pod_svc_subnet2_name = "anthos-proj-pod-svc-subnet2-test4"
 #pod_svc_subnet1_name = "c1-svc-range"
 #pod_svc_subnet2_name = "c2-svc-range"
 
-firewall_name = "allow-all-intra-connection-test4"
+firewall_name = "allow-all-intra-connection-testing1"
 
 
 #ASM
