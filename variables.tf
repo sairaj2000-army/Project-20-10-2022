@@ -11,8 +11,9 @@ variable "project_id" {}
 
 variable "network_name" {}
 
-variable "subnet1_name" {}
-variable "subnet2_name" {}
+variable "subnet_name" {}
+variable "pod_subnet_name" {}
+variable "pod_svc_subnet_name" {}
 
 variable "minnode" {}
 variable "maxnode" {}
