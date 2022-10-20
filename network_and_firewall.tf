@@ -17,8 +17,6 @@ module "network" {
       subnet_private_access = "true"
     },
   ]
-  secondary_ranges = {}
-  }
 
   firewall_rules = [{
     name        = var.firewall_name
