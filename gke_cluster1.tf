@@ -32,4 +32,6 @@ module "cluster1" {
       preemptible  = false
     },
   ]
+    
+  depends_on = [module.network]
 }
