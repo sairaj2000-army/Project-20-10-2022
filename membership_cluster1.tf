@@ -16,61 +16,61 @@ resource "google_gke_hub_membership" "cluster1_membership" {
 
 #install ASM with managed control plane
 locals {
-  cluster_hub_mesh_update_command = "gcloud alpha container hub mesh update --control-plane automatic --membership ${var.project_id}-${var.cluster_name} --project=${var.project_id}"
+  cluster1_hub_mesh_update_command = "gcloud alpha container hub mesh update --control-plane automatic --membership ${var.project_id}-${var.cluster1_name} --project=${var.project_id}"
 }
-resource "null_resource" "cluster1_hub_mesh_update" {
+resource "null_resource" "cluster2_hub_mesh_update" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
-    command     = local.cluster_hub_mesh_update_command
+    command     = local.cluster1_hub_mesh_update_command
   }
   triggers = {
-    command_sha = sha1(local.cluster_hub_mesh_update_command)
+    command_sha = sha1(local.cluster1_hub_mesh_update_command)
   }
-  depends_on = [google_gke_hub_membership.gke_membership]
+  depends_on = [google_gke_hub_membership.cluster1_membership]
 }
 
 
 
 locals{
-   down_asm = "curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_1.13 > asmcli"
+   down_asm1 = "curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_1.13 > asmcli"
 }
-resource "null_resource" "down_asmcli" {
+resource "null_resource" "down_asmcli2" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
-    command     = local.down_asm
+    command     = local.down_asm1
   }
-  depends_on = [google_gke_hub_membership.gke_membership]
+  depends_on = [google_gke_hub_membership.cluster1_membership]
 }
 
 
 locals{
-   prem = "chmod +x asmcli"
+   prem1 = "chmod +x asmcli"
 }
-resource "null_resource" "change_prem" {
+resource "null_resource" "change_prem2" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
-    command     = local.prem
+    command     = local.prem1
   }
-  depends_on = [google_gke_hub_membership.gke_membership, null_resource.down_asmcli]
+  depends_on = [google_gke_hub_membership.cluster1_membership, null_resource.down_asmcli1]
 }
 
   
   
   
 locals{
-   install_service_mesh = "./asmcli install --project_id ${var.project_id} --cluster_name ${var.cluster_name} --cluster_location ${var.zone_name} --fleet_id ${var.project_id} --output_dir ${"./asm-dir-${var.cluster_name}"} --managed --enable_all --ca mesh_ca"
+   install_service_mesh2 = "./asmcli install --project_id ${var.project_id} --cluster_name ${var.cluster1_name} --cluster_location ${var.region1_name} --fleet_id ${var.project_id} --output_dir ${"./asm-dir-${var.cluster1_name}"} --managed --enable_all --ca mesh_ca"
 }
-resource "null_resource" "istio_ins" {
+resource "null_resource" "istio_ins1" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
-    command     = local.install_service_mesh 
+    command     = local.install_service_mesh1 
   }
-  depends_on = [google_gke_hub_membership.gke_membership, null_resource.change_prem]
+  depends_on = [google_gke_hub_membership.cluster1_membership, null_resource.change_prem1]
 }
 
 
 
-resource "null_resource" "script_for_istio" {
+resource "null_resource" "script_for_istio1" {
 
  provisioner "local-exec" {
     command = <<-EOT
@@ -91,30 +91,30 @@ resource "null_resource" "script_for_istio" {
       mesh.cloud.google.com/proxy='{"managed":"true"}'
     EOT
  }
-  depends_on = [null_resource.istio_ins, null_resource.getting_Cred] 
+  depends_on = [null_resource.istio_ins1, null_resource.getting_Cred1] 
 }
 
 
 locals{
-   cred = "gcloud container clusters get-credentials ${var.cluster_name} --project ${var.project_id} --zone ${var.zone_name}"
+   cred1 = "gcloud container clusters get-credentials ${var.cluster1_name} --project ${var.project_id} --zone ${var.region1_name}"
 }
-resource "null_resource" "getting_Cred" {
+resource "null_resource" "getting_Cred1" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
-    command     = local.cred
+    command     = local.cred1
   }
-  depends_on = [google_gke_hub_membership.gke_membership, null_resource.istio_ins,]
+  depends_on = [google_gke_hub_membership.cluster1_membership, null_resource.istio_ins1,]
 }
 
 
 locals{
-  apply_m = "kubectl apply -k manifests/ --context=gke_${var.project_id}_${var.zone_name}_${var.cluster_name}"
+  apply_m1 = "kubectl apply -k manifests/ --context=gke_${var.project_id}_${var.region1_name}_${var.cluster1_name}"
 }
-resource "null_resource" "apply_menifest" {
+resource "null_resource" "apply_menifest1" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
-    command     = local.apply_m
+    command     = local.apply_m1
   }
-  depends_on = [google_gke_hub_membership.gke_membership, null_resource.istio_ins, null_resource.script_for_istio, null_resource.getting_Cred]
+  depends_on = [google_gke_hub_membership.cluster1_membership, null_resource.istio_ins1, null_resource.script_for_istio1, null_resource.getting_Cred1]
 }
 
