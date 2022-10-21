@@ -1,20 +1,4 @@
 
-#register this cluster as a member of the fleet
-resource "google_gke_hub_membership" "cluster2_membership" {
-  membership_id = "${var.project_id}-new-${var.cluster2_name}"
-  endpoint {
-    gke_cluster {
-      resource_link = "//container.googleapis.com/${module.cluster2.cluster_id}"
-    }
-  }
-  authority {
-    issuer = "https://container.googleapis.com/v1/${module.cluster2.cluster_id}"
-  }
-
-  provider   = google-beta
-  depends_on = [module.cluster2]
-}
-
 
 #acm installation 
 resource "google_gke_hub_feature_membership" "feature_member-cluster2" {
@@ -39,6 +23,7 @@ resource "google_gke_hub_feature_membership" "feature_member-cluster2" {
       referential_rules_enabled  = true
     }
   }
+  depends_on = [google_gke_hub_membership.cluster1_membership, null_resource.istio_ins1, null_resource.script_for_istio1, null_resource.getting_Cred1, null_resource.apply_menifest1]
 }
   
   
