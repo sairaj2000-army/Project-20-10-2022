@@ -42,9 +42,10 @@ asm_version = "1.10"
 
 
 #ACM
-sync_repo   = "https://github.com/GoogleCloudPlatform/gcp-getting-started-lab-jp/tree/master/anthos/k8s-manifest/bookinfo"
-sync_branch = "master"
-policy_dir  = "dev-kubernetes-manifests/"
+sync_repo   = "https://github.com/GoogleCloudPlatform/microservices-demo.git"
+sync_branch = "main"
+#policy_dir  = "dev-kubernetes-manifests/"
+policy_dir  = "./release/kubernetes-manifests.yaml"
 
 # Node pools
 minnode  = 4
