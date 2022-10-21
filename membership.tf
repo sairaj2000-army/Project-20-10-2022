@@ -65,7 +65,7 @@ resource "null_resource" "getting_Cred" {
 
 
 locals{
-  apply_m = "kubectl apply -k manifests/ --context gke_${project_id}_${var.zone_name}_${var.cluster_name}"
+  apply_m = "kubectl apply -k manifests/ --context=gke_${var.project_id}_${var.zone_name}_${var.cluster_name}"
 }
 resource "null_resource" "apply_menifest" {
   provisioner "local-exec" {
