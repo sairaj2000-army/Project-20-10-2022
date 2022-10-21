@@ -26,6 +26,15 @@
 
 
 
+resource "null_resource" "script_for_istio" {
+
+ provisioner "local-exec" {
+    command = "/bin/bash ./script.sh"
+  }
+  depends_on = [null_resource.istio_ins] 
+}
+
+
 #register this cluster as a member of the fleet
 resource "google_gke_hub_membership" "gke_membership" {
   membership_id = "${var.project_id}-${var.cluster_name}"
