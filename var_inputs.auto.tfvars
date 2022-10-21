@@ -42,10 +42,9 @@ asm_version = "1.10"
 
 
 #ACM
-sync_repo   = "https://github.com/GoogleCloudPlatform/microservices-demo.git"
+sync_repo   = "https://github.com/GoogleCloudPlatform/bank-of-anthos.git"
 sync_branch = "main"
-#policy_dir  = "dev-kubernetes-manifests/"
-policy_dir  = "./release/kubernetes-manifests.yaml"
+policy_dir  = "./kubernetes-manifests"
 
 # Node pools
 minnode  = 4
