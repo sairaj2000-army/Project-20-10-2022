@@ -30,8 +30,6 @@ module "gke" {
       max_count      = var.maxnode
       disk_size_gb   = var.disksize
       preemptible    = false
-      auto_repair    = true
-      auto_upgrade   = true
     },
   ]
 }
