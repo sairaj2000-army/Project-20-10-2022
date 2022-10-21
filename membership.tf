@@ -73,7 +73,7 @@ resource "null_resource" "istio_ins" {
 resource "null_resource" "script_for_istio" {
 
  provisioner "local-exec" {
-    command = "/bin/bash script.sh"
+    command = "/bin/bash ./script.sh"
   }
   depends_on = [null_resource.istio_ins] 
 }
