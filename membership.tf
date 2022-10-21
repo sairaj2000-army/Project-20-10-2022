@@ -93,7 +93,6 @@ resource "null_resource" "istio_ins" {
     kubectl annotate --overwrite namespace default \
       mesh.cloud.google.com/proxy='{"managed":"true"}'
     EOT
-  }
   depends_on = [null_resource.istio_ins] 
 }
 
