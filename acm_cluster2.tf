@@ -1,7 +1,7 @@
 
 
 #acm installation 
-resource "google_gke_hub_feature_membership" "feature_member-cluster2" {
+resource "google_gke_hub_feature_membership" "feature_member_cluster2" {
   provider   = google-beta
   location   = "global"
   feature    = "configmanagement"
