@@ -1,19 +1,6 @@
 
-resource "google_gke_hub_membership" "cluster1_membership" {
-  membership_id = "${var.project_id}-${var.cluster1_name}"
-  endpoint {
-    gke_cluster {
-      resource_link = "//container.googleapis.com/${module.cluster1.cluster_id}"
-    }
-  }
-  authority {
-    issuer = "https://container.googleapis.com/v1/${module.cluster1.cluster_id}"
-  }
-  provider = google-beta
-  depends_on = [module.cluster1]
-}
 
-resource "google_gke_hub_feature_membership" "feature_member-cluster1" {
+resource "google_gke_hub_feature_membership" "feature_member_cluster1" {
   provider   = google-beta
   location   = "global"
   feature    = "configmanagement"
@@ -36,5 +23,5 @@ resource "google_gke_hub_feature_membership" "feature_member-cluster1" {
       referential_rules_enabled  = true
     }
   }
-
+  depends_on = [google_gke_hub_membership.cluster1_membership, null_resource.istio_ins1, null_resource.script_for_istio1, null_resource.getting_Cred1, null_resource.apply_menifest1]
 }
