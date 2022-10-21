@@ -5,6 +5,8 @@ locals {
 
 variable "cluster_name" {}
 
+variable "zone_name" {}
+
 variable "region_name" {}
 
 variable "project_id" {}
