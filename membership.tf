@@ -24,20 +24,32 @@ resource "null_resource" "cluster1_hub_mesh_update" {
     command     = local.cluster_hub_mesh_update_command
   }
   triggers = {
-    command_sha = sha1(local.cluster1_hub_mesh_update_command)
+    command_sha = sha1(local.cluster_hub_mesh_update_command)
+  }
+  depends_on = [google_gke_hub_membership.gke_membership]
+}
+
+
+locals{
+   install_service_mesh = "./asmcli install --project_id ${var.project_id} --cluster_name ${var.cluster_name} --cluster_location ${var.zone_name} --fleet_id ${var.project_id} --output_dir ${"./asm-dir-${var.cluster_name}"} --managed --enable_all --ca mesh_ca"
+}
+resource "null_resource" "istio_ins" {
+  provisioner "local-exec" {
+    interpreter = ["bash", "-exc"]
+    command     = local.install_service_mesh 
   }
   depends_on = [google_gke_hub_membership.gke_membership]
 }
 
 
 
-
-
 resource "null_resource" "script_for_istio" {
 
  provisioner "local-exec" {
-    
     command = "/bin/bash script.sh"
   }
-  depends_on = [google_gke_hub_membership.gke_membership] 
+  depends_on = [null_resource.istio_ins] 
 }
+
+
+
