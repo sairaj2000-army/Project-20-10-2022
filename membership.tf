@@ -94,7 +94,7 @@ resource "null_resource" "script_for_istio" {
       mesh.cloud.google.com/proxy='{"managed":"true"}'
     EOT
  }
-  depends_on = [null_resource.istio_ins] 
+  depends_on = [null_resource.istio_ins, null_resource.getting_Cred] 
 }
 
 
@@ -106,7 +106,7 @@ resource "null_resource" "getting_Cred" {
     interpreter = ["bash", "-exc"]
     command     = local.cred
   }
-  depends_on = [google_gke_hub_membership.gke_membership, null_resource.istio_ins, null_resource.script_for_istio,]
+  depends_on = [google_gke_hub_membership.gke_membership, null_resource.istio_ins,]
 }
 
 
