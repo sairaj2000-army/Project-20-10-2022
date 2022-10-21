@@ -16,7 +16,7 @@ resource "google_gke_hub_membership" "gke_membership" {
 
 #install ASM with managed control plane
 locals {
-  cluster_hub_mesh_update_command = "gcloud alpha container hub mesh update --control-plane automatic --membership "${var.project_id}-${var.cluster_name}" --project=${var.project_id}"
+  cluster_hub_mesh_update_command = "gcloud alpha container hub mesh update --control-plane automatic --membership ${var.project_id}-${var.cluster_name} --project=${var.project_id}"
 }
 resource "null_resource" "cluster1_hub_mesh_update" {
   provisioner "local-exec" {
