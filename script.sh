@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 data:
