@@ -46,7 +46,7 @@ resource "null_resource" "down_asmcli1" {
 locals{
    prem1 = "chmod +x asmcli"
 }
-resource "null_resource" "change_prem2" {
+resource "null_resource" "change_prem1" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = local.prem1
