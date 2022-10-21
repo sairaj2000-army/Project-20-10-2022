@@ -23,7 +23,7 @@ resource "google_gke_hub_feature_membership" "feature_member-cluster2" {
       referential_rules_enabled  = true
     }
   }
-  depends_on = [google_gke_hub_membership.cluster1_membership, null_resource.istio_ins1, null_resource.script_for_istio1, null_resource.getting_Cred1, null_resource.apply_menifest1]
+  depends_on = [google_gke_hub_membership.cluster2_membership, null_resource.istio_ins2, null_resource.script_for_istio2, null_resource.getting_Cred2, null_resource.apply_menifest2]
 }
   
   
