@@ -70,10 +70,29 @@ resource "null_resource" "istio_ins" {
 
 
 
-resource "null_resource" "script_for_istio" {
+#resource "null_resource" "script_for_istio" {
 
  provisioner "local-exec" {
-    command = "/bin/bash ./script.sh"
+    command = <<-EOT
+    cat <<EOF | kubectl apply -f -
+    apiVersion: v1
+    data:
+      mesh: |-
+        defaultConfig:
+          tracing:
+            stackdriver: {}
+    kind: ConfigMap
+    metadata:
+      name: istio-asm-managed
+      namespace: istio-system
+    EOF
+
+
+    kubectl label namespace default istio.io/rev=asm-managed --overwrite
+
+    kubectl annotate --overwrite namespace default \
+      mesh.cloud.google.com/proxy='{"managed":"true"}'
+    EOT
   }
   depends_on = [null_resource.istio_ins] 
 }
