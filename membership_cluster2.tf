@@ -110,7 +110,7 @@ resource "null_resource" "getting_Cred2" {
 locals{
   apply_m2 = "kubectl apply -k manifests/ --context=gke_${var.project_id}_${var.region2_name}_${var.cluster2_name}"
 }
-resource "null_resource" "apply_menifest" {
+resource "null_resource" "apply_menifest2" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = local.apply_m2
