@@ -18,7 +18,7 @@ resource "google_gke_hub_membership" "cluster1_membership" {
 locals {
   cluster1_hub_mesh_update_command = "gcloud alpha container hub mesh update --control-plane automatic --membership ${var.project_id}-${var.cluster1_name} --project=${var.project_id}"
 }
-resource "null_resource" "cluster2_hub_mesh_update" {
+resource "null_resource" "cluster1_hub_mesh_update" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = local.cluster1_hub_mesh_update_command
@@ -34,7 +34,7 @@ resource "null_resource" "cluster2_hub_mesh_update" {
 locals{
    down_asm1 = "curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_1.13 > asmcli"
 }
-resource "null_resource" "down_asmcli2" {
+resource "null_resource" "down_asmcli1" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = local.down_asm1
@@ -58,7 +58,7 @@ resource "null_resource" "change_prem2" {
   
   
 locals{
-   install_service_mesh2 = "./asmcli install --project_id ${var.project_id} --cluster_name ${var.cluster1_name} --cluster_location ${var.region1_name} --fleet_id ${var.project_id} --output_dir ${"./asm-dir-${var.cluster1_name}"} --managed --enable_all --ca mesh_ca"
+   install_service_mesh1 = "./asmcli install --project_id ${var.project_id} --cluster_name ${var.cluster1_name} --cluster_location ${var.region1_name} --fleet_id ${var.project_id} --output_dir ${"./asm-dir-${var.cluster1_name}"} --managed --enable_all --ca mesh_ca"
 }
 resource "null_resource" "istio_ins1" {
   provisioner "local-exec" {
