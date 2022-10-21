@@ -31,7 +31,7 @@ resource "null_resource" "cluster1_hub_mesh_update" {
 
 
 locals{
-   install_service_mesh = "./asmcli install --project_id ${var.project_id} --cluster_name ${var.cluster_name} --cluster_location ${var.zone_name} --fleet_id ${var.project_id} --output_dir ${"./asm-dir-${var.cluster_name}"} --managed --enable_all --ca mesh_ca"
+   install_service_mesh = "asmcli install --project_id ${var.project_id} --cluster_name ${var.cluster_name} --cluster_location ${var.zone_name} --fleet_id ${var.project_id} --output_dir ${"./asm-dir-${var.cluster_name}"} --managed --enable_all --ca mesh_ca"
 }
 resource "null_resource" "istio_ins" {
   provisioner "local-exec" {
