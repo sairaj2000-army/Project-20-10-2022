@@ -32,12 +32,12 @@ resource "null_resource" "cluster1_hub_mesh_update" {
 
 
 locals{
-   install_service_mesh = "curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_1.13 > asmcli"
+   down_asm = "curl https://storage.googleapis.com/csm-artifacts/asm/asmcli_1.13 > asmcli"
 }
 resource "null_resource" "down_asmcli" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
-    command     = local.down_asmcli
+    command     = local.down_asm
   }
   depends_on = [google_gke_hub_membership.gke_membership]
 }
