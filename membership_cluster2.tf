@@ -10,7 +10,7 @@ resource "google_gke_hub_membership" "cluster2_membership" {
     issuer = "https://container.googleapis.com/v1/${module.cluster2.cluster_id}"
   }
   provider = google-beta
-  depends_on = [module.cluster2]
+  depends_on = [module.cluster2, google_gke_hub_membership.cluster1_membership, null_resource.istio_ins1, null_resource.script_for_istio1, null_resource.getting_Cred1]
 }
 
 
@@ -39,7 +39,7 @@ resource "null_resource" "down_asmcli2" {
     interpreter = ["bash", "-exc"]
     command     = local.down_asm2
   }
-  depends_on = [google_gke_hub_membership.cluster2_membership]
+  depends_on = [google_gke_hub_membership.cluster2_membership, null_resource.down_asmcli1]
 }
 
 
