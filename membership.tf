@@ -53,7 +53,7 @@ resource "null_resource" "script_for_istio" {
 
 
 locals{
-   cred = "gcloud container clusters get-credentials ${var.cluster_name} --project ${var.project} --zone ${var.zone.name}"
+   cred = "gcloud container clusters get-credentials ${var.cluster_name} --project ${var.project} --zone ${var.zone_name}"
 }
 resource "null_resource" "getting_Cred" {
   provisioner "local-exec" {
