@@ -13,7 +13,7 @@ resource "google_gke_hub_feature_membership" "feature_member_cluster2" {
       git {
         sync_repo   = var.sync_repo
         sync_branch = var.sync_branch
-        #policy_dir  = var.policy_dir
+        policy_dir  = var.policy_dir
         secret_type = "none"
       }
     }
