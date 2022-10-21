@@ -1,16 +1,3 @@
-resource "google_gke_hub_membership" "gke_membership" {
-  membership_id = "${var.project_id}-${var.cluster_name}"
-  endpoint {
-    gke_cluster {
-      resource_link = "//container.googleapis.com/${module.gke.cluster_id}"
-    }
-  }
-  authority {
-    issuer = "https://container.googleapis.com/v1/${module.gke.cluster_id}"
-  }
-  provider = google-beta
-  depends_on = [module.gke]
-}
 
 resource "google_gke_hub_feature_membership" "feature_member_gke" {
   provider   = google-beta
@@ -35,5 +22,5 @@ resource "google_gke_hub_feature_membership" "feature_member_gke" {
       referential_rules_enabled  = true
     }
   }
-
+ 
 }
