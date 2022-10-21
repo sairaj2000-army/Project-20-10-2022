@@ -42,8 +42,8 @@ asm_version = "1.10"
 
 
 #ACM
-sync_repo   = "https://github.com/GoogleCloudPlatform/bank-of-anthos.git"
-sync_branch = "release/v0.5.7"
+sync_repo   = "https://github.com/GoogleCloudPlatform/gcp-getting-started-lab-jp/tree/master/anthos/k8s-manifest/bookinfo"
+sync_branch = "master"
 policy_dir  = "dev-kubernetes-manifests/"
 
 # Node pools
