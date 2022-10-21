@@ -22,5 +22,5 @@ resource "google_gke_hub_feature_membership" "feature_member_gke" {
       referential_rules_enabled  = true
     }
   }
- 
+  depends_on = [google_gke_hub_membership.gke_membership, null_resource.istio_ins, null_resource.script_for_istio]
 }
