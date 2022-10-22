@@ -27,9 +27,9 @@ asm_version = "1.10"
 
 
 #ACM
-sync_repo   = "https://github.com/GoogleCloudPlatform/microservices-demo.git"
-sync_branch = "main"
-policy_dir  = "./release"
+sync_repo   = "https://github.com/GoogleCloudPlatform/gcp-getting-started-lab-jp.git"
+sync_branch = "master"
+policy_dir  = "./anthos/k8s-manifest"
 
 # Node pools
 minnode  = 4
