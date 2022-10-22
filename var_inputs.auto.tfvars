@@ -1,7 +1,7 @@
 project_id = "us-gcp-ame-its-23a8a-sbx-1"
 
 
-cluster_name = "anthos-proj-cluster-final-bu-t1"
+cluster_name = "anthos-proj-cluster-f-book-t1"
 
 
 region_name = "us-central1"
@@ -10,15 +10,15 @@ zone_name = "us-central1-c"
 
 
 #network and Firewall
-network_name = "anthos-proj-network-final-bu-t1"
+network_name = "anthos-proj-network-f-book-t1"
 
-subnet_name = "anthos-proj-subnet-final-bu-t1"
+subnet_name = "anthos-proj-subnet-f-book-t1"
 
-firewall_name = "allow-all-intra-final-bu-t1"
+firewall_name = "allow-all-intra-f-book-t1"
 
-pod_subnet_name = "anthos-proj-pod-subnet-final-bu-t1"
+pod_subnet_name = "anthos-proj-pod-subnet-f-book-t1"
 
-pod_svc_subnet_name = "anthos-proj-pod-svc-subnet-final-bu-t1"
+pod_svc_subnet_name = "anthos-proj-pod-svc-subnet-f-book-t1"
 
 
 
