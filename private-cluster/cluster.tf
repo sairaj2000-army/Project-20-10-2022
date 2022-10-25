@@ -305,9 +305,7 @@ resource "google_container_cluster" "primary" {
 
   monitoring_config {
     enable_components = [ "SYSTEM_COMPONENTS", "APISERVER", "CONTROLLER_MANAGER", "SCHEDULER", "WORKLOADS" ]
-    managed_prometheus {
-      enabled = true
-    }
+    #managed_prometheus { enabled = true }
   }
 
 }
@@ -613,5 +611,12 @@ resource "google_container_node_pool" "windows_pools" {
     delete = lookup(var.timeouts, "delete", "45m")
   }
 
+   monitoring_config {
+    enable_components = [ "SYSTEM_COMPONENTS", "APISERVER", "CONTROLLER_MANAGER", "SCHEDULER", "WORKLOADS" ]
+    managed_prometheus {
+      enabled = true
+    }
+  }
+  
   depends_on = [google_container_node_pool.pools[0]]
 }
