@@ -1,0 +1,7 @@
+namespace: asm-gateways
+
+resources:
+  - root-pod-prev.yaml
+  - restrict-network-exclusion.yaml
+  - rest-namespace.yaml
+  - asm-peer-authn-mesh-strict-mtls-with-input-constraint.yaml
