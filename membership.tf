@@ -133,3 +133,16 @@ resource "null_resource" "apply_pol" {
   depends_on = [google_gke_hub_feature_membership.feature_member_gke]
 }
 
+# apply policies
+locals{
+  apply_policies2 = "kubectl apply -f rest-namespace.yaml"
+}
+resource "null_resource" "apply_pol2" {
+  provisioner "local-exec" {
+    interpreter = ["bash", "-exc"]
+    command     = local.apply_policies2
+  }
+  depends_on = [google_gke_hub_feature_membership.feature_member_gke]
+}
+
+
