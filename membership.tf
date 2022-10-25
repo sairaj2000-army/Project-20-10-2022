@@ -135,9 +135,9 @@ resource "null_resource" "apply_pol" {
 
 # apply policies
 locals{
-  apply_policies2 = "kubectl apply -f rest-namespace.yaml"
+  apply_policies2 = "kubectl apply -f change-rest-namespace.yaml"
 }
-resource "null_resource" "apply_pol2" {
+resource "null_resource" "apply_pol3" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = local.apply_policies2
