@@ -304,7 +304,7 @@ resource "google_container_cluster" "primary" {
   }
 
   monitoring_config {
-    enable_components {SYSTEM_COMPONENTS, APISERVER, CONTROLLER_MANAGER, SCHEDULER, WORKLOADS}
+    enable_components = { SYSTEM_COMPONENTS, APISERVER, CONTROLLER_MANAGER, SCHEDULER, WORKLOADS }
     managed_prometheus {
       enabled = true
     }
