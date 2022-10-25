@@ -46,3 +46,18 @@ variable "policy_dir" {
   type        = string
   description = "the root directory in the repo branch that contains the resources."
 }
+
+variable "sync_repo2" {
+  type        = string
+  description = "git URL for the repo which will be sync'ed into the cluster via Config Management"
+}
+
+variable "sync_branch2" {
+  type        = string
+  description = "the git branch in the repo to sync"
+}
+
+variable "policy_dir2" {
+  type        = string
+  description = "the root directory in the repo branch that contains the resources."
+}
