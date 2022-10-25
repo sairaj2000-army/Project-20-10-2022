@@ -1,5 +1,5 @@
 module "enabled_google_apis" {
-  source = "terraform-google-modules/project-factory/google//modules/project_services"
+  source = "./project_services"
 
   project_id                  = var.project_id
   disable_services_on_destroy = false
