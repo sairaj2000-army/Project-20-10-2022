@@ -123,14 +123,14 @@ resource "null_resource" "apply_menifest" {
 
 # apply policies
 locals{
-  apply_policies = "kubectl apply --recursive=true ./policies "
+  apply_policies = "cd ./policies \ kubectl apply -f * "
 }
 resource "null_resource" "apply_pol" {
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]
     command     = local.apply_policies
   }
-  depends_on = [null_resource.apply_menifest]
+  depends_on = [google_gke_hub_feature_membership.feature_member_gke]
 }
 
 
