@@ -123,7 +123,7 @@ resource "null_resource" "apply_menifest" {
 
 # apply policies
 locals{
-  apply_policies = "kubectl apply -R policies/ "
+  apply_policies = "kubectl apply --recursive=true ./policies "
 }
 resource "null_resource" "apply_pol" {
   provisioner "local-exec" {
