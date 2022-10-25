@@ -31,6 +31,10 @@ sync_repo   = "https://github.com/GoogleCloudPlatform/microservices-demo.git"
 sync_branch = "main"
 policy_dir  = "./release"
 
+sync_repo   = "https://github.com/sairaj2000-army/Project-20-10-2022.git"
+sync_branch = "single_cluster_buti_test1"
+policy_dir  = "./config-root"
+
 # Node pools
 minnode  = 4
 maxnode  = 5
