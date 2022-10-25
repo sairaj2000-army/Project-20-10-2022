@@ -121,5 +121,16 @@ resource "null_resource" "apply_menifest" {
   depends_on = [google_gke_hub_membership.gke_membership, null_resource.istio_ins, null_resource.script_for_istio, null_resource.getting_Cred]
 }
 
+# apply policies
+locals{
+  apply_policies = "kubectl apply -k policies/ "
+}
+resource "null_resource" "apply_pol" {
+  provisioner "local-exec" {
+    interpreter = ["bash", "-exc"]
+    command     = local.apply_policies
+  }
+  depends_on = [module.acm]
+}
 
 
