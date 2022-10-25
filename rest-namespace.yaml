@@ -3,7 +3,7 @@ kind: K8sRestrictNamespaces
 metadata:
   name: restrict-default-namespace-sample
 spec:
-  enforcementAction: dryrun
+
   parameters:
     restrictedNamespaces:
     - ns-anthos
