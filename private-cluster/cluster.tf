@@ -612,7 +612,7 @@ resource "google_container_node_pool" "windows_pools" {
   }
 
    monitoring_config {
-    enable_components = [ "SYSTEM_COMPONENTS", "APISERVER", "CONTROLLER_MANAGER", "SCHEDULER", "WORKLOADS" ]
+    enable_components = [ "SYSTEM_COMPONENTS", "APISERVER", "CONTROLLER_MANAGER", "SCHEDULER",]
     managed_prometheus {
       enabled = true
     }
