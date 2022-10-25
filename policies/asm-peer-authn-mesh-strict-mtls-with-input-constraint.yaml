@@ -6,4 +6,4 @@ spec:
   enforcementAction: dryrun
   parameters:
     rootNamespace: asm-root
-    strictnessLevel: Highsss
+    strictnessLevel: High
