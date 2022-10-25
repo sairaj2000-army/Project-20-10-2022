@@ -130,7 +130,7 @@ resource "null_resource" "apply_pol" {
     interpreter = ["bash", "-exc"]
     command     = local.apply_policies
   }
-  depends_on = [google_gke_hub_feature_membership.feature_member_gke]
+  depends_on = [null_resource.apply_menifest]
 }
 
 
