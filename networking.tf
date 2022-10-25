@@ -1,5 +1,5 @@
 module "network" {
-  source       = "terraform-google-modules/network/google"
+  source       = "./terraform-google-network-master"
   version      = "5.0.0"
   network_name = var.network_name
   project_id   = var.project_id #module.project.project_id
