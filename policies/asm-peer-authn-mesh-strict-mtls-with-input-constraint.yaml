@@ -3,7 +3,7 @@ kind: AsmPeerAuthnMeshStrictMtls
 metadata:
   name: asm-peer-authn-mesh-strict-mtls-with-input-constraint
 spec:
-  enforcementAction: dryrun
+
   parameters:
     rootNamespace: asm-root
     strictnessLevel: High
